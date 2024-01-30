@@ -1,0 +1,17 @@
+--> Create a VPC, with CIDR range of your choice that will allow you to create at least 6 subnets.
+
+--> Create 6 subntes. 2 public for webtier auto enable public IPv4 address, 2 private for pp tier, 2 private for database tier (each subnet of each tier in one availability zone, as we do design on two availability zones)
+
+--> Create Internet Gate Way to connect to VPC and its public subntes. Internet Gateway enables resources (like EC2 instances) in public subnets to connect to the internet. Similarly, resources on the internet can initiate a connection to resources in your subnet using the public.
+
+--> Create 3 route tables. In public route table edit route associate to public subnet, similarly for other two rpivate subnets
+
+--> Crate Nat Gate Way. Network Address Translation (NAT) Instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.
+
+--> create an EC2 in Public subnet for deploying webtier app & corresponding Auto Scaling Group in subnet with webtier
+
+--> create EC2 in private subnet and corresponding Auto Scaling Group in subnet with apptier
+
+--> Create ELB
+
+-->
